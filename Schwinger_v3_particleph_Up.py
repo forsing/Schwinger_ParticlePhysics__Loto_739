@@ -9,9 +9,9 @@ import numpy as np
 from scipy.spatial import cKDTree
 
 DEFAULTS = (
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_2971.csv",
-    "/Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_plus_1727.csv",
+    "/data/loto7_4698_k80.csv",
+    "/data/loto7_4698_k80_loto_2971.csv",
+    "/data/loto7_4698_k80_loto_plus_1727.csv",
 )
 
 WINDOW, STARTS = 96, 12
@@ -538,7 +538,7 @@ if __name__ == "__main__":
 
 
 """
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80.csv; redova=4698
+Ulaz: /data/loto7_4698_k80.csv; redova=4698
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -551,7 +551,7 @@ Test: redovi 4635..4698
 SCHWINGER V3 PARTICLE PHYSICS: prosek=1.1094; pogodaka 0..7=[16, 27, 19, 2, 0, 0, 0, 0]
 Prethodna kombinacija: prosek=1.2188; pogodaka 0..7=[13, 30, 16, 4, 1, 0, 0, 0]
 Poslednji red: 4,12,18,28,35,36,37
-SLEDECI RED 4699: 1,2,3,4,6,12,13
+SLEDECI RED 4699: 1,x,3,y,6,z,13
 Skor=1.1613503262; iteracija=28; vec postoji u istoriji=False
 Empirijska podrska: L1 poluprecnik=2.800000; kvantil=.75
 Proveren lokalni maksimum dozvoljenih zamena; globalni maksimum nije potvrden.
@@ -559,7 +559,7 @@ Spinorski kanali su strukturna analogija; skor nije verovatnoca dobitka.
 
 
 
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_2971.csv; redova=2971
+Ulaz: /data/loto7_4698_k80_loto_2971.csv; redova=2971
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -572,7 +572,7 @@ Test: redovi 2908..2971
 SCHWINGER V3 PARTICLE PHYSICS: prosek=1.4375; pogodaka 0..7=[13, 20, 22, 8, 1, 0, 0, 0]
 Prethodna kombinacija: prosek=1.2969; pogodaka 0..7=[11, 30, 16, 7, 0, 0, 0, 0]
 Poslednji red: 18,20,21,24,29,34,38
-SLEDECI RED 2972: 1,2,7,9,15,38,39
+SLEDECI RED 2972: 1,x,7,y,15,z,39
 Skor=1.5155870456; iteracija=15; vec postoji u istoriji=False
 Empirijska podrska: L1 poluprecnik=2.800000; kvantil=.75
 Proveren lokalni maksimum dozvoljenih zamena; globalni maksimum nije potvrden.
@@ -580,7 +580,7 @@ Spinorski kanali su strukturna analogija; skor nije verovatnoca dobitka.
 
 
 
-Ulaz: /Users/4c/Desktop/GHQ/data/loto7_4698_k80_loto_plus_1727.csv; redova=1727
+Ulaz: /data/loto7_4698_k80_loto_plus_1727.csv; redova=1727
 Validacija: 16/48
 Validacija: 32/48
 Validacija: 48/48
@@ -593,7 +593,7 @@ Test: redovi 1664..1727
 SCHWINGER V3 PARTICLE PHYSICS: prosek=1.3125; pogodaka 0..7=[9, 31, 20, 3, 1, 0, 0, 0]
 Prethodna kombinacija: prosek=1.2969; pogodaka 0..7=[15, 23, 18, 8, 0, 0, 0, 0]
 Poslednji red: 4,12,18,28,35,36,37
-SLEDECI RED 1728: 1,2,20,36,37,38,39
+SLEDECI RED 1728: 1,x,20,y,37,z,39
 Skor=0.8959685867; iteracija=16; vec postoji u istoriji=False
 Empirijska podrska: L1 poluprecnik=3.200000; kvantil=.75
 Proveren lokalni maksimum dozvoljenih zamena; globalni maksimum nije potvrden.
@@ -605,15 +605,15 @@ Spinorski kanali su strukturna analogija; skor nije verovatnoca dobitka.
 """
 V3 koristi Schwingerovu ideju parova oscilatora za opis spina, prenetu na četiri para razmaka. Uči skor celog prelaza i spregu između tih kanala. Provere rekonstrukcije kombinacije, fazne simetrije i svih pojedinačnih zamena su prošle.
 
-Provera je pokazala da slobodna pretraga može otići do ekstremno zbijenog rasporeda, daleko od podataka. Ograničiću je oblašću koju određuju stvarni razmaci iz istorije. 
+Provera je pokazala da slobodna pretraga može otići do ekstremno zbijenog rasporeda, daleko od podataka. Ograničavam je oblašću koju određuju stvarni razmaci iz istorije. 
 
 Nova ideja su spinorski kanali i njihove sprege, inspirisani Schwingerovim opisom ugaonog momenta parovima oscilatora. 
 Model rangira cele prelaze. Pretraga ostaje u oblasti određenoj stvarnim istorijskim razmacima, bez nametnute raspodele ili aritmetičkih početnih nizova.
 
 Fajl	                Sledeća kombinacija	    Prosek pogodaka na 64 kola	Prethodna kombinacija
-Objedinjeni, red 4699	1,2,3,4,6,12,13	        1,1094	                    1,2188
-Loto, red 2972	        1,2,7,9,15,38,39	    1,4375	                    1,2969
-Loto Plus, red 1728	    1,2,20,36,37,38,39	    1,3125	                    1,2969
+Objedinjeni, red 4699	1,x,3,y,6,z,13	        1,1094	                    1,2188
+Loto, red 2972	        1,x,7,y,15,z,39	        1,4375	                    1,2969
+Loto Plus, red 1728	    1,x,20,y,37,z,39	    1,3125	                    1,2969
 
 Provereni su rekonstrukcija, fazna simetrija, hronologija, ponovljivost i lokalni maksimum dozvoljenih zamena. Nijedan predlog već ne postoji u svom CSV-u.
 
